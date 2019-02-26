@@ -4,12 +4,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.example.adeba.steg_test.R;
+import com.scottyab.aescrypt.AESCrypt;
+
+import java.security.GeneralSecurityException;
 
 public class EncodeActivity extends ImageActivity {
 
@@ -49,14 +53,24 @@ public class EncodeActivity extends ImageActivity {
             }
         });
 
+
+
         mEncodeButton.setEnabled(mEditText.getText().length() > 0);
         mEncodeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent data = new Intent();
-                data.putExtra(EXTRA_MESSAGE, mEditText.getText().toString());
-                setResult(RESULT_OK, data);
-                finish();
+                String password = "badman";
+                String text = mEditText.getText().toString();
+                try {
+                    String encryptedMsg = AESCrypt.encrypt(password, text);
+                    Intent data = new Intent();
+                    data.putExtra(EXTRA_MESSAGE, encryptedMsg);
+                    setResult(RESULT_OK, data);
+                    finish();
+                }catch (GeneralSecurityException e) {
+                    //handle error
+                    Log.e("Error", e.toString());
+                }
             }
         });
     }
