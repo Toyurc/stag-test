@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.adeba.steg_test.R;
+import com.example.adeba.steg_test.abstracts.ImageActivity;
 import com.example.adeba.steg_test.utils.FileUtils;
 
 

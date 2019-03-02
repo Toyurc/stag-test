@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.example.adeba.steg_test.R;
+import com.example.adeba.steg_test.abstracts.ImageActivity;
 import com.scottyab.aescrypt.AESCrypt;
 
 import java.security.GeneralSecurityException;
@@ -20,8 +21,8 @@ public class EncodeActivity extends ImageActivity {
     static final String EXTRA_MESSAGE = "Extra Message";
     static final String KEY_MESSAGE = "Key Message";
 
-    EditText mEditText;
-    Button mEncodeButton;
+    public EditText mEditText;
+    public Button mEncodeButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +53,6 @@ public class EncodeActivity extends ImageActivity {
 
             }
         });
-
 
 
         mEncodeButton.setEnabled(mEditText.getText().length() > 0);

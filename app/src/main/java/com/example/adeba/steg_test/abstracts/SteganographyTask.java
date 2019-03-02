@@ -1,4 +1,4 @@
-package com.example.adeba.steg_test.interfaceLayer;
+package com.example.adeba.steg_test.abstracts;
 
 import android.os.AsyncTask;
 import android.util.Log;
@@ -10,7 +10,7 @@ public abstract class SteganographyTask extends AsyncTask<SteganographyParams, V
 
     private AsyncResponse<SteganographyParams> mDelegate;
 
-    SteganographyTask(AsyncResponse<SteganographyParams> delegate) {
+    public SteganographyTask(AsyncResponse<SteganographyParams> delegate) {
         mDelegate = delegate;
     }
 

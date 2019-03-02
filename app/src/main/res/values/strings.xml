@@ -3,8 +3,8 @@
     <string name="app_name">Steganography</string>
     <string name="action_settings">Settings</string>
     <string name="message_hint">Enter message…</string>
-    <string name="encode">Encode</string>
-    <string name="decode">Decode</string>
+    <string name="encode">Encrypt</string>
+    <string name="decode">Decrypt</string>
     <string name="reply">Reply</string>
     <string name="about">About</string>
     <string name="about_description">This app was developed as a final year project of the Department of Computer Science, University of Ibadan</string>

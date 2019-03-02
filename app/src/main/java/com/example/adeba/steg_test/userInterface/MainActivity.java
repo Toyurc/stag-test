@@ -25,8 +25,8 @@ import android.widget.Toast;
 
 import com.example.adeba.steg_test.R;
 import com.example.adeba.steg_test.interfaceLayer.AsyncResponse;
-import com.example.adeba.steg_test.interfaceLayer.DecodeTask;
-import com.example.adeba.steg_test.interfaceLayer.EncodeTask;
+import com.example.adeba.steg_test.encyrptionLayer.Decrypt;
+import com.example.adeba.steg_test.encyrptionLayer.Encrypt;
 import com.example.adeba.steg_test.interfaceLayer.SteganographyParams;
 import com.example.adeba.steg_test.utils.FileUtils;
 
@@ -37,7 +37,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements AsyncResponse<SteganographyParams> {
     static final String TAG = "Steganography";
 
-    static final String EXTRA_FILE_PATH = "Extra File Path";
+    public static final String EXTRA_FILE_PATH = "Extra File Path";
 
     static final int PICK_IMAGE_ENCODE = 3;
     static final int PICK_IMAGE_DECODE = 4;
@@ -241,7 +241,7 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse<Ste
 
                     steganographyParams = new SteganographyParams(mFilePath, null);
 
-                    DecodeTask decodeTask = new DecodeTask(this);
+                    Decrypt decodeTask = new Decrypt(this);
                     decodeTask.execute(steganographyParams);
 
                     break;
@@ -260,7 +260,7 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse<Ste
 
                     steganographyParams = new SteganographyParams(mFilePath, message);
 
-                    EncodeTask encodeTask = new EncodeTask(this);
+                    Encrypt encodeTask = new Encrypt(this);
                     encodeTask.execute(steganographyParams);
 
                     break;

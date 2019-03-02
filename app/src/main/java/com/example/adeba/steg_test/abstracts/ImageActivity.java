@@ -1,4 +1,4 @@
-package com.example.adeba.steg_test.userInterface;
+package com.example.adeba.steg_test.abstracts;
 
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -9,13 +9,14 @@ import android.widget.ImageView;
 
 import com.example.adeba.steg_test.interfaceLayer.AsyncResponse;
 import com.example.adeba.steg_test.interfaceLayer.ImageLoaderTask;
+import com.example.adeba.steg_test.userInterface.MainActivity;
 
 public abstract class ImageActivity extends AppCompatActivity implements AsyncResponse<Bitmap> {
 
     static final String KEY_FILEPATH = "Key FilePath";
 
-    ImageView mImageView;
-    Uri mFilePath;
+    public ImageView mImageView;
+    public Uri mFilePath;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

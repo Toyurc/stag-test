@@ -1,14 +1,17 @@
-package com.example.adeba.steg_test.interfaceLayer;
+package com.example.adeba.steg_test.encyrptionLayer;
 
 import android.graphics.Bitmap;
 import android.net.Uri;
 
+import com.example.adeba.steg_test.abstracts.SteganographyTask;
+import com.example.adeba.steg_test.interfaceLayer.AsyncResponse;
+import com.example.adeba.steg_test.interfaceLayer.SteganographyParams;
 import com.example.adeba.steg_test.utils.BitmapUtils;
 import com.example.adeba.steg_test.utils.FileUtils;
 import com.example.adeba.steg_test.utils.SteganographyUtils;
 
-public class EncodeTask extends SteganographyTask {
-    public EncodeTask(AsyncResponse<SteganographyParams> delegate) {
+public class Encrypt extends SteganographyTask {
+    public Encrypt(AsyncResponse<SteganographyParams> delegate) {
         super(delegate);
     }
 
